@@ -337,10 +337,21 @@ public class Linear {
         return predictValues(model, x, dec_values);
     }
 
-    /**
-     * @throws IllegalArgumentException if model is not probabilistic (see {@link Model#isProbabilityModel()})
-     */
+    // uses default
     public static double predictProbability(Model model, Feature[] x, double[] prob_estimates) throws IllegalArgumentException {
+            return predictProbability(model, x, prob_estimates, new ProbabilityEstimatorSoftMax());
+    }
+
+    // modification Viglink/Katrin: ProbabilityEstimator
+    public static double predictProbability(Model model, Feature[] x, double[] prob_estimates, ProbabilityEstimator probEstimator) throws IllegalArgumentException {
+        
+        double label = predictValues(model, x, prob_estimates);
+        probEstimator.estimate(prob_estimates,model);
+        
+        //remove code below, new code above based on own probability estimator
+        
+        /*
+
         if (!model.isProbabilityModel()) {
             StringBuilder sb = new StringBuilder("probability output is only supported for logistic regression");
             sb.append(". This is currently only supported by the following solvers: ");
@@ -376,6 +387,7 @@ public class Linear {
             for (int i = 0; i < nr_class; i++)
                 prob_estimates[i] = prob_estimates[i] / sum;
         }
+        */
 
         return label;
     }

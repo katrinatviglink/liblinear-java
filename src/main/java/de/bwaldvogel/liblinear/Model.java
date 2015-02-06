@@ -50,6 +50,11 @@ public final class Model implements Serializable {
     public int[] getLabels() {
         return copyOf(label, nr_class);
     }
+    
+    //TODO added as more efficient
+    public int[] getLabelsEfficient() {
+        return label;
+    }
 
     /**
      * The nr_feature*nr_class array w gives feature weights. We use one

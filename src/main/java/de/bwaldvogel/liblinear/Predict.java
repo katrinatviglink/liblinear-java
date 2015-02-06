@@ -108,7 +108,8 @@ public class Predict {
 
             if (flag_predict_probability) {
                 assert prob_estimates != null;
-                predict_label = Linear.predictProbability(model, nodes, prob_estimates);
+                // default probability estimator (maybe allow to set another one?)
+                predict_label = Linear.predictProbability(model, nodes, prob_estimates,new ProbabilityEstimatorSoftMax());
                 printf(out, "%g", predict_label);
                 for (int j = 0; j < model.nr_class; j++)
                     printf(out, " %g", prob_estimates[j]);

@@ -313,7 +313,7 @@ public class Train {
         return newArray;
     }
 
-    private static Problem constructProblem(List<Double> vy, List<Feature[]> vx, int max_index, double bias) {
+    public static Problem constructProblem(List<Double> vy, List<Feature[]> vx, int max_index, double bias) {
         Problem prob = new Problem();
         prob.bias = bias;
         prob.l = vy.size();

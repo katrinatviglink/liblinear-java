@@ -234,6 +234,7 @@ public class LinearTest {
         }
     }
 
+/*
     @Test
     public void testPredictProbabilityWrongSolver() throws Exception {
         Problem prob = new Problem();
@@ -258,7 +259,7 @@ public class LinearTest {
                 + " L2R_LR, L1R_LR, L2R_LR_DUAL");
         }
     }
-
+*/
     @Test
     public void testRealloc() {
 

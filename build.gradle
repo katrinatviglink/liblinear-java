@@ -2,7 +2,7 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'nexus'
 
-version = '1.95'
+version = '1.95_viglink_r01'
 
 sourceCompatibility = 1.6
 
@@ -37,17 +37,17 @@ ext {
 
 modifyPom {
     project {
-        groupId        'de.bwaldvogel'
+        groupId        'com.viglink'
         artifactId     'liblinear'
         name           title
         description    description
         url            url
-        inceptionYear '2008'
+        inceptionYear '2015'
 
         scm {
-            url 'git@github.com:bwaldvogel/liblinear.git'
-            connection 'scm:git:git@github.com:bwaldvogel/liblinear.git'
-            developerConnection 'scm:git:git@github.com:bwaldvogel/liblinear.git'
+            url 'git@github.com:katrinatviglink/liblinear-java.git'
+            connection 'scm:git:git@github.com:katrinatviglink/liblinear-java.git'
+            developerConnection 'scm:git:git@github.com:katrinatviglink/liblinear-java.git'
         }
 
         licenses {
@@ -60,9 +60,9 @@ modifyPom {
 
         developers {
             developer {
-                id 'bwaldvogel'
-                name 'Benedikt Waldvogel'
-                email 'mail@bwaldvogel.de'
+                id 'katrinatviglink'
+                name 'Katrin Tomanek'
+                email 'katrin@viglink.com'
             }
         }
     }
